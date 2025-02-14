@@ -9,7 +9,7 @@ const Home = () => {
             <div className="p-5 text-center bg-amber-50 w-96 mx-auto rounded"> 
                 <h1 className="text-2xl font-bold">To-Do List</h1>
 
-                <div className="flex gap-2 justify-between my-4 w-full">
+                <div className="flex gap-2 justify-between w-full">
                     <input
                         type="text"
                         value={task}
@@ -31,13 +31,13 @@ const Home = () => {
                 </div>
 
              
-                <div className="p-5 w-full">
+                <div className="mt-4">
                     {tasks.map((t, index) => (
-                        <div key={index} className="p-2 bg-blue-100 text-start flex justify-between items-center rounded mb-2 w-full">
-                            <span className="w-full">{t}</span>
+                        <div key={index} className="bg-blue-100 text-start flex justify-between items-center rounded p-2 mb-2 w-full">
+                            <d className="w-full">{t}</d>
                             <button
                                 onClick={() => setTasks(tasks.filter((_, i) => i !== index))}
-                                className="px-3 py-1 bg-blue-700 font-medium text-white rounded"
+                                className="px-3 py-1 bg-blue-700 font-medium text-red-600 rounded"
                             >
                                 x
                             </button>
