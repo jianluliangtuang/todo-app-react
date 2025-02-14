@@ -1,27 +1,52 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Home = () => {
-
-
+    const [tasks, setTasks] = useState([]);
+    const [task, setTask] = useState("");
 
     return (
         <div className="p-5 text-center bg-blue-200">
-          <div className="bg-amber-50 w-md mx-auto ">
-            <h1 className="text-2xl font-bold">To-Do Task</h1>
-            <div className="flex gap-3 p-5">
-              <input type="text" placeholder="Enter Task" className="w-full border-2 border-blue-600 ps-3 " />
-              <button className="px-4 py-2 bg-blue-700  text-white">add</button>
-            </div>
-          <div className='p-5 '>
-            <div className='p-2 bg-blue-100 text-start flex justify-between rounded'>
-                <input type="text" className="w-full outline-0 "/>
-            <button className="px-3 py-1 bg-blue-700 flex font-medium me-1  text-red-500">x</button>
-            </div>
-         </div>
-          </div>
-          </div>
-    
-      );
-}
+            <div className="p-5 text-center bg-amber-50 w-96 mx-auto rounded"> 
+                <h1 className="text-2xl font-bold">To-Do List</h1>
 
-export default Home
+                <div className="flex gap-2 justify-between my-4 w-full">
+                    <input
+                        type="text"
+                        value={task}
+                        onChange={(e) => setTask(e.target.value)}
+                        className="rounded border-2 border-blue-600 w-full ps-3"
+                        placeholder="Enter task..."
+                    />
+                    <button
+                        onClick={() => {
+                            if (task.trim()) {
+                                setTasks([...tasks, task]);
+                                setTask("");
+                            }
+                        }}
+                        className="bg-blue-500 text-white px-4 py-2 rounded"
+                    >
+                        Add
+                    </button>
+                </div>
+
+             
+                <div className="p-5 w-full">
+                    {tasks.map((t, index) => (
+                        <div key={index} className="p-2 bg-blue-100 text-start flex justify-between items-center rounded mb-2 w-full">
+                            <span className="w-full">{t}</span>
+                            <button
+                                onClick={() => setTasks(tasks.filter((_, i) => i !== index))}
+                                className="px-3 py-1 bg-blue-700 font-medium text-white rounded"
+                            >
+                                x
+                            </button>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Home;
