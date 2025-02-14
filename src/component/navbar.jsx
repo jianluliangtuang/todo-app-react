@@ -1,27 +1,17 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
- 
-
-
   return (
-    <div className="p-5 text-center bg-blue-200">
-      <div className="bg-amber-50 w-md mx-auto ">
-        <h1 className="text-2xl font-bold">To-Do Task</h1>
-        <div className="flex gap-3 p-5">
-          <input type="text" placeholder="enter task" className=" border-2 border-blue-700 text-center" />
-          <button className="px-4 py-2 bg-blue-700 text-white">add</button>
-        </div>
- <div>
-  
- </div>
+    <container > 
+     <div className="mx-auto flex justify-between bg-green-300 text-center text-white py-10 px-30">
+      <span className='text-3xl ' >logo</span>
+      <ul className='flex gap-10'>
+        <li className='text-2xl cursor-pointer hover:font-bold transition-all duration-50 transform '>Home</li>
+        <li className='text-2xl cursor-pointer hover:font-bold transition-all duration-50 transform '>Menu</li>
+      </ul>
 
-
-
-
-      </div>
-      </div>
-
+     </div>
+     </container>
   );
 };
 
