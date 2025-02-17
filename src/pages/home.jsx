@@ -4,6 +4,7 @@ const Home = () => {
     const [tasks, setTasks] = useState([]);
     const [task, setTask] = useState("");
 
+     
     return (
         <div className="p-5 text-center bg-blue-200">
             <div className="p-5 text-center bg-amber-50 w-96 mx-auto rounded"> 
@@ -37,7 +38,7 @@ const Home = () => {
                             <d className="w-full">{t}</d>
                             <button
                                 onClick={() => setTasks(tasks.filter((_, i) => i !== index))}
-                                className="px-3 py-1 bg-blue-700 font-medium text-red-600 rounded"
+                                className="px-3 py-1 bg-blue-700 font-medium text-white rounded"
                             >
                                 x
                             </button>
@@ -45,6 +46,8 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+
+
         </div>
     );
 };
